@@ -5,7 +5,7 @@
 <title>Insert title here</title>
 	<script>
 	function styleHeaderSiblings(){
-		if(!document.getElemetsByTagName) return false;
+		if(!document.getElementsByTagName) return false;
 		var headers = document.getElementsByTagName('h1');
 		for(var i = 0; i<headers.length; i++){
 			var elem = getNextElement(headers[i].nextSibling);
