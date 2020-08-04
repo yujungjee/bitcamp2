@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script>
+		function myFunction(){
+			var list = document.getElementById("myList");
+			list.removeChild(list.childNodes[0]);
+		}
+	</script>
+</head>
+<body>
+	<ul id = "myList"><li>Coffee</li><li>Tea</li><li>Milk</li></ul>
+	<button onclick = "myFunction()">Try it</button>
+</body>
+</html>

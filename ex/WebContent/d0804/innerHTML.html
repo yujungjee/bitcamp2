@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script>
+	function domTest1(){
+		var testdiv = documnet.getElementById('testdiv');
+		alert(testdiv.innerHTML); // "<p>이것은 <em>테스트</em> 입니다.</p>"
+	}
+	
+	function domTest2(){
+		var testdiv = documnet.getElementById('testdiv');
+		testdiv.innerHTML = '<p>제가<em>이 내용을</em>추가 했습니다.</p>';
+	}
+	</script>
+</head>
+<body>
+	<div id = 'testdiv'>
+	<p>이것은 <em>테스트</em> 입니다.</p>
+	</div>
+	
+	<button onclick = "domTest1()">domTest1</button>
+	<button onclick = "domTest2()">domTest2</button>
+</body>
+</html>

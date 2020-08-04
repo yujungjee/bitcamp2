@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script>
+	function test(){
+		var sp1 = document.createElement("span");
+		var txt1 = document.createTextNode("111");
+		sp1.appendChild(txt1);
+		var sp2 = document.getElementById("childElement");
+		var parentDiv = sp2.parentNode;
+		
+		parentDiv.insertBefore(sp1, sp2);
+		// insertAfter(sp1, sp2);
+	}
+	
+	function insertAfter(newElement, targetElement){
+		var parent = targetElement.parnetNode;
+		if(parent.lastChild == targetElement){
+			parent.appendChilde(newElement);
+		} else {
+			parent.insertBefore(newElement, targetElement.nextSibing);
+		}
+	}
+	</script>
+</head>
+<body onload = 'test()'>
+<div id = "parentElement">
+<span id = "childElement"> foo bar</span>
+</div>
+</body>
+</html>

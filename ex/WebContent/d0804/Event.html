@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+// 하나의 함수 등록
+//window.onload = prepareGallery;
+
+
+// 함수가 여러 개 일 때
+// window.onload = function(){
+//     firstFunction();
+//     secondFunction();
+// }
+
+function addLoadEvent(func){
+    var oldonload = window.onload; // onload event에 연결된 메소드를 얻어온다.
+    if(typeof window.onload != 'function'){ // type이 function이 아니면, onload에 연결된 함수 없으면
+        window.onload = func;  // 다른 function이 연결되어 있지 않으므로 기냥 연결
+    }else{
+        window.onload = function(){
+            oldonload();  // 이전에 onload에 연결되었던 func를 호출한다.
+            func();
+        }
+    }
+}
+
+addLoadEvent(firstFunction);
+addLoadEvent(secondFunction);
+
+
+function firstFunction(){
+ console.log('firstFunction');
+}
+
+function secondFunction(){
+ console.log('scondFunction');
+}
+
+function prepareGallery(){
+ console.log('prepareGallery');
+}
+</script>
+</head>
+<body>
+
+</body>
+</html>

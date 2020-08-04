@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script>
+	function upcase(n){
+		if(n.nodeType == 3){ // 노드가 text노드이면 텍스트를 대문자로 바꾼다.
+			n.data = n.data.toUpperCase(); // data 대신 value로 써도됨.
+		} else { // 현재 노드가 text노드가 아니면 각 자식에 대해 재귀적으로 호출
+			var kids = n.childNodes;
+			for(var i=0; i<kids.length; i++)
+				upcase(kids[i]);
+		}
+	}
+	</script>
+</head>
+<body onload="upcase(document.body)">
+  <div>
+    <h1> aa </h1>
+    <h2> bb </h2>
+  </div>
+  
+  <div>
+    <h1> cc </h1>
+    <h1> dd </h1>
+  </div>
+</body>
+</html>

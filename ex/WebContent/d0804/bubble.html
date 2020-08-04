@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+	function test1() {
+		document.getElementById('a').addEventListener('click', function(){console.log('a')});
+		document.getElementById('b').addEventListener('click', function(){console.log('b')});
+		document.getElementById('c').addEventListener('click', function(){console.log('c')});
+	}
+	
+	function test2(){
+		documnet.getElementById('a').addEventListener('click', function(){console.log('a')});
+		documnet.getElementById('b').addEventListener('click', function(){console.log('b')});
+		documnet.getElementById('c').addEventListener('click', function(){console.log('c')});
+	}
+	
+	function test3(){
+		documnet.getElementById('a').addEventListener('click', function(){console.log('a')});
+		documnet.getElementById('b').addEventListener('click', function(evt){evt.stopPropagation(); console.log('b')});
+		documnet.getElementById('c').addEventListener('click', function(){console.log('c')});		
+	}
+	</script>
+	
+	<body onload='test02'>
+	<div id = 'a'>a Click하세요
+	<div id='b'>b Click하세요
+	<div id ='c'>c Click하세요</div>
+	</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+// 노드 아래의 모든 텍스트 얻기
+// Text노드를 이어 붙이고 문자열로 반환
+function getText(n){
+  var strings = [];
+  getStrings(n, strings);
+  return strings.join(' ');
+
+  function getStrings(n, strings){
+    if(n.nodeType == 3) strings.push(n.data);
+    else if(n.nodeType == 1){
+      for(var m = n.firstChild; m != null; m=m.nextSibling){
+        getStrings(m, strings);
+      }
+    }
+  }
+}
+
+function init(){
+  var obj = document.getElementById("list");
+  var texts = getText(obj);
+  console.log(texts);
+}
+</script>
+</head>
+<body onload='init()'>
+  <ul id='list'><li>a</li><li>b</li><li>c</li><li>d</li></ul>
+</body>
+</html>

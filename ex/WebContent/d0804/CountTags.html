@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+function countTags(n){
+  var numtags = 0;
+  console.log('nodeType:'+n.nodeType);
+  if(n.nodeType == 1){
+   numtags++;
+  }
+  var children = n.childNodes;
+  //console.log('child length:'+children.length);
+  for(var i=0; i < children.length; i++){
+    numtags += countTags(children[i]);
+  }
+  return numtags;
+}
+</script>
+
+</head>
+<body onload='alert(countTags(document))'>
+  this is a <i>sample</i> document.
+</body>
+</html>
