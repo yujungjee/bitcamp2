@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+	$(document).ready(function(){
+		$('input[type="text"]').val('Hello jQuery..!');
+	});
+	
+ 	$(document).ready(function(){
+		$('input[name]|="tag"]').val('Hello jQuery..!');
+	});
+	
+	$(document).ready(function(){
+		$('input[class~="buttonStyle"]').val('Hello jQuery..!');
+	});
+	
+	$(document).ready(function(){
+		$('input[name^="inp"]').val('Hello jQuery..!');
+	});
+
+	$(document).ready(function(){
+		$('input[name$="02"]').val('Hello jQuery..!');
+	});
+
+	$(document).ready(function(){
+		$('input[name*="pet"]').val('Hello jQuery..!');
+	}); 
+	</script>
+	
+	<input type = 'text' name='tag-pets'>
+	<input type = 'text' name='input02' class='skin buttonStyle top'>
+</body>
+</html>

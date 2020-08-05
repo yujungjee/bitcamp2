@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script>
+	function execute(){
+		$( ":text").val("this is it");
+		$( ":enabled").val("this is it");
+		$( ":disabled").val("this is it");
+		$( ":input").val("this is it");
+		alert($("input:radio").val());
+	}
+	</script>
+</head>
+<body>
+	<form>
+		<input type = 'text' name ='input1'>
+		<input type = 'text' name = 'input2' disabled = "disabled">
+		<input type = 'password' name='input3'>
+		<input type = "radio" name = "radio" value="01" checked="checked"/>
+		<input type = "radio" name="radio" value="02"/>
+	</form>
+	<button onclick = 'execute()'>Click</button>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+		var data = 10;
+		
+		function outer(){
+			this.data = 20;
+			data = 30;
+			
+			document.write("1. data1 = "+data, "<br>");
+			document.write("2. this.data1 = "+this.data, "<br>");
+			document.write("3. window.data = "+window.data, "<br>");
+		}
+		
+		outer();
+		
+		var data = 10;
+		
+		function outer(){
+			function inner(){
+				this.data = 20;
+				data = 30;
+				
+				document.write("1. data1 = "+data, "<br>");
+				document.write("2. this.data1 = "+this.data, "<br>");
+				document.write("3. window.data = "+window.data, "<br>");
+			}
+			inner();
+		}
+		outer();
+	</script>
+</body>
+</html>

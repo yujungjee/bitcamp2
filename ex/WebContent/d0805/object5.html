@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+		function Person(_name, _age){
+		this.name = _name;
+		this.age = _age;
+		}
+		
+		var p = new Person('홍길동', 30);
+		
+		var korean = Object.create(p, {
+			region: {value:'서울특별시', enumerable:true}
+		});
+		
+		for(var p in korean){
+			console.log(p+":"+korean[p]);
+		}
+	</script>
+</body>
+</html>

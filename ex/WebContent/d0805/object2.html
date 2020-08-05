@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+	var o = {};
+	o.prop = 'exists';
+	
+	function changeO(){
+		o.newprop = o.prop;
+		delete o.prop;
+	}
+	
+	console.log(o.hasOwnProperty('prop')); //true
+	changeO();
+	console.log(o.hasOwnProperty('prop')); //false
+	
+	var o2 = {};
+	o2.prop = 'exists';
+	console.log(o2.hasOwnProperty('prop')); //true
+	console.log(o2.hasOwnProperty('toString')); //false 객체 스스로가 정의한 propery가 아니라서
+	console.log(o2.hasOwnProperty('hasOwnProperty')); //true
+	
+	</script>
+</body>
+</html>

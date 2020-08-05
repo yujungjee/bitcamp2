@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+	try{
+		try{
+			throw new Error("oops");
+		} finally {
+			console.log("finally");
+			}
+		}
+	catch(ex){
+		console.log("outer", ex.message);
+	}
+	
+	try {
+		var array = new Array(999999999999);
+	} catch (exception){
+		console.log('11:' +exception.message);
+		console.log('33:' +exception.name);
+	}
+	</script>
+</body>
+</html>

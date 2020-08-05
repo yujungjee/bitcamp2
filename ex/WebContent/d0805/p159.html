@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+	function divide(alpha, beta){
+		if(beta == 0){
+			throw 5;
+			// throw 'DivideByZeroException';
+		} else {
+			return alpha / beta;
+		}
+	}
+	
+	try {
+		divide(10, 0);
+	} catch (exception){
+		console.log(exception);
+		console.log(typeof exception);
+		console.log(exception.name);
+		console.log(exception.message);
+		alert('CATCH');
+	}
+	</script>
+</body>
+</html>
