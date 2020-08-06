@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+	<script>
+ 	$(document).ready(function(){
+		var jb=('li').get();
+		for(var i = 0; i<jb.length; i++){
+			$('div').append('<p>'+jb[i].innerHTML + '</p>');
+		}
+	});
+	
+	</script>
+	
+	<ul>
+		<li>Loream</li>
+		<li>lpsum</li>		
+	</ul>
+	<div></div>
+	</body>
+
+</html>

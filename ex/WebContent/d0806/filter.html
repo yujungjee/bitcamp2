@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+	<script>
+	$(document).ready(function(){
+		// fruits div 하위에 있는 div중 id가 apple인 div 가져오기
+		// 하위 전체에서 검색
+		/*  $("#fruits").find("[id=apple]").css('color', 'red'); */
+	
+		// fruits div 하위에 있는 div 중 아이디가 kiwi인 div 가져오기
+		// 동일 Level에서 검색
+		$("#fruits div").filter(function(){ return $(this).attr('id') == "kiwi"; }).css('color','red');
+	
+	});
+	</script>
+</head>
+<body>
+	<div id = fruits>
+		<div id = apple>apple</div>
+		<div id = kiwi>kiwi</div>
+		<div id = pineapple>pineapple</div>
+	</div>
+</body>
+</html>

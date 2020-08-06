@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+	<script>
+	
+		
+		
+	</script>
+</head>
+<body>
+<c:forEach var ="item" items="${itemList}" varStatus="status">
+	<tr	data-idx='${status.count}'
+		data-distb-idntfc-no='${item.distbldntfcNo'}
+		</tr>
+		</c:forEach>
+</body>
+</html>

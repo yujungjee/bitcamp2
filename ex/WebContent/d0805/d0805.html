@@ -25,16 +25,74 @@
                 background-color: #ccc;
             }
         </style>
-
-        <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
         <script>
-
+            var target;
         
-
+			function init(){
+				document.getElementById('add').addEventListener('click', addClick);
+				document.getElementById('remove').addEventListener('click', removeClick);
+				document.getElementById('up').addEventListener('click', upClick);
+				document.getElementById('down').addEventListener('click', downClick);
+				document.getElementsByTagName('ul')[0].addEventListener('click', ulClick);
+			}
+			
+			function addClick(){
+				var inputData = document.getElementById('menuName').value;
+				var liNode = document.createElement('li');
+				var textnode = document.createTextNode(inputData);
+				liNode.appendChild(textnode);
+				
+				var ulNode = document.getElementsByTagName('ul')[0];
+				ulNode.appendChild(liNode);
+			}
+			
+			function removeClick(){
+				if(target){
+					target.remove();
+					target = null;
+				}
+				else alert('선택된 것이 없습니다');
+			}
+			
+			function upClick(){
+				if(target){
+					if(target.previousElementSibling){
+						target.parentNode.insertBefore(target, target.previousElementSibling);
+						//target.after(target.previousElementSibling); // up: 위노드를 아래로
+					}
+					else alert('최상단 li tag입니다');
+				}
+				else alert('선택된 것이 없습니다');
+			}
+			
+			function downClick(){
+				if(target){
+					if(target.nextElementSibling){
+						target.parentNode.insertBefore(target.nextElementSibling, target);
+						//target.before(target.nextElementSibling); // down: 아래노드를 위로
+					}
+					else alert('최하단 li tag입니다');
+				}
+				else alert('선택된 것이 없습니다');				
+			}
+			
+			function ulClick(event){
+				if(event.target.nodeName != 'LI') return;
+				/*
+				var liNodes = document.querySelectorAll('ul li');
+				for(var i = 0; i < liNodes.length; i++){
+					liNodes[i].removeAttribute('class');
+				}*/
+				if(target){
+					target.removeAttribute('class');
+				}
+				
+				target = event.target;
+				target.className = 'select';
+			}
         </script>
     </head>
-
-    <body>
+    <body onload='init()'>
         <div>
             <input type="text" id="menuName" />
             <button id="add">추가</button>
@@ -43,8 +101,6 @@
             <button id="down">DOWN</button>
         </div>
         <ul class="menu">
-          <li>111</li>
-          <li class='select'>222</li>
         </ul>
     </body>
 

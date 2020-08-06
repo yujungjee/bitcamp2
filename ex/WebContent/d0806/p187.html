@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script>
+   $( document ).ready( function() {
+        // Object배열을 선언합니다.
+        var array = [
+            { name: 'Hanbit Media', link: 'http://hanb.co.kr' },
+            { name: 'Naver', link: 'http://naver.com' },
+            { name: 'Daum', link: 'http://daum.net' },
+            { name: 'Paran', link: 'http://paran.com' }
+        ];
+
+	    // array: 배열
+	    // index: 배열 index
+	    // item: index번째 Object
+	    $.each(array, function (index, item) {
+	        console.log(index + ':' + item.name + ','+item.link);
+	    });
+  }); 	  
+  
+  /*  $( document ).ready( function() {
+       // Object배열을 선언합니다.
+       var object = {
+          name : '홍길동',
+          age : 30
+       };
+
+ 	  // object: 객체 / index: 속성 / item: 속성값 
+ 	  $.each(object, function (index, item) {
+ 	      console.log(index + ':' + item);
+ 	  });
+   });	    */
+</script>
+
+</head>
+<body>
+</body>
+</html>

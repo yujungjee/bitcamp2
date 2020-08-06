@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title> </title>
+    <style>
+        body{
+            font-size:9pt;
+            font-family:"굴림";       
+        }
+        ul.menu {
+         padding:10px;
+         list-style:none;
+         border:1px #000 solid;
+         
+        }
+        ul.menu li {
+             border:1px #eeeeee solid;
+            margin:10px;
+        }
+         ul.menu li.select {
+            background-color:#ccc;
+            color:#f00;
+            font-size:20px;
+        }
+         ul.menu li.border{
+            border:4px solid #f00;
+        }
+         ul.menu li.black-bg {
+            background-color:#000;
+            color:#fff;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+    
+    		$("#remove").click(function(){
+    			$("ul.menu li").each(function(){
+    				$(this).removeClass();
+    			})
+    		});
+    		
+    </script>
+</head>
+<body>
+    <button id="remove">제거</button>
+    <ul class="menu">
+       <li class="select border">menu1</li>
+       <li>menu2</li>
+       <li class="border">menu3</li>
+       <li class="select">menu4</li>
+       <li class="select border black-bg">menu5</li>
+    </ul>        
+</body>
+
+</html>
+
