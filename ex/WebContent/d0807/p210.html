@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type = "text/css">
+	#f_fieldset{border: 5px solid #aaa; padding: 15px; margin: 10px}
+	#f_legent{font-weight: bold;}
+	.fe_div{border: 1px solid #aaa; width: 100px; height: 100px; display: inline-block; float:left; margin:10px;}
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script type = "text/javascript">
+	$(document).ready(function(){
+		var str = "$(':text').css('background-color', '#add');";
+		str += "$(':password').css('background-color','#faa');";
+		str += "$(':checked').css('background-color', '#00f');";
+		str += "$(':selected').css('background-color', '#ddf');";
+		
+		eval(str);
+		// alert(str.split(';').join(";<br/>"))
+		
+		$('#f_result').html(str.split(';').join(";<br/>"));
+		
+		// 페이지가 로드되었을 때 콤보박스에 선택된 값이 텍스트박스에 출력
+		$('#textSubject').val($("#lstSubject option: selected").text());
+		
+		// 콤보박스가 변경되었을 때
+		$('#lstSubject').change(function(){
+			// 드롭다운 리스트에서 선택된 값을 텍스트 박스에 출력
+		var selectedText = $("#lstSubject option:selected").text());
+		})
+	})
+</script>
+</head>
+<body>
+
+</body>
+</html>

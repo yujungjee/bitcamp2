@@ -6,9 +6,25 @@
 </head>
 <body>
 	<script>
-	function sortkids(e){
+	function sortkids(){
+		// 정렬한 자식을 가진 엘리먼트
+		var e = document.getElementById("list");
 		
-	}
+		// 자식 엘리먼트를 배열로 이동(텍스트노드는 제외)
+		var kids = []; // li객체 배열
+		for (var x = e.firstChild; x != null; x = x.nextSibling){
+			if(x.nodeType == 1) kids.push(x);
+		}
+		
+		// 자식노드의 텍스트 내용에 따라 배열을 정렬
+		// 각 자식에는 한 개의 자식만 있고 그것이 Text노드라고 가정한다.
+		kids.sort(function(n,m){
+			var s = n.firstChild.nodeValue; //노드n
+			var t = m.firstChild.nodeValue; //노드m
+			if(s < t) return -1; // n이 m 앞에
+			else if(s > t) return 1; // n이 m뒤에
+			else return 0; // n과 m은 같은 순서
+	});
 	
 	</script>
 	

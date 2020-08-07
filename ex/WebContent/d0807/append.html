@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+    // $('h1').append('<p>33333333333333</p>'); // h1 tag안에 신규p tag추가
+    // $('h1').append($('p')); // h1 tag안에 아래있는 p tag추가
+	$('h1').after('<p>33333333333333</p>'); // h1 tag뒤에 신규p tag추가
+	//$('h1').after($('h2')); // h1 tag뒤에 위에 있는h2 tag추가
+	//$('h1').prepend('<p>33333333333333</p>'); // h1 tag안에 신규p tag추가
+	
+	//$('<p>33333333333333</p>').appendTo($('h1')); // 신규 p tag를 h1 tag안에 추가
+});
+
+</script>
+
+</head>
+<body>
+<h2>0000000000000000</h2>
+<h1>1111111111111111</h1>
+<p>2222222222222222</p>
+</body>
+
+</html>

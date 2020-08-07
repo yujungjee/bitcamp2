@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+$(document).ready(function(){
+  $("span").on("eventTest", function(event){
+    console.log("The span element.");
+  });
+
+  $("p").on("eventTest", function(event){
+    console.log("The p element.");
+  });
+
+  $("div").on("eventTest", function(){
+    console.log("The div element.");
+  });
+  
+  $("button").click(function(){
+    $("span").trigger("eventTest");
+  });
+});
+</script>
+</head>
+<body>
+	<div style="height:100px;width:500px;background-color:lightblue;">
+   This is a div element.
+  <p style="background-color:pink">This is a p element <br>
+    <span style="background-color:orange">This is a span element</span>
+  </p>
+</div>
+
+<button>Click Here</button>
+</body>
+</html>

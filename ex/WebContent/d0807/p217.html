@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+	<script>
+	$(document).ready(function(){
+		var content = [
+		{ name: '윤인성', region: '서울특별시 강서구'},
+		{ name: '윤하린', region: '서울특별시 광진구'},
+		{ name: '윤인아', region: '미국 메사추세츠'},
+	];
+		
+		$('div').append(function (index){
+			var item = content[index];
+			var output ='';
+			output += '<h1>' + item.name + '</h1>';
+			output += '<h2>' + item.name + '</h2>';
+		
+			return output;
+		});
+	});
+	</script>
+	
+	<div></div>
+	<div></div>
+	<div></div>
+</head>
+<body>
+
+</body>
+</html>

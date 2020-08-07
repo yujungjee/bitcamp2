@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script>
+	$(document).ready(function(){
+		
+// 		$('#myTask').children().click(function(){
+// 			$(this).remove();
+// 		});
+	
+		$('#myTask').on('click','li',function(e){
+			$(this).remove();
+		});
+		
+		$('#btnAction').on("click", function(e){
+			$("#myTask").append("<li>new row</li>");
+		});
+	});
+</script>
+</head>
+<body>
+	<ul id = 'myTask'>
+		<li>11</li>
+		<li>22</li>
+		<li>33</li>
+	</ul>
+	
+	<input type ="button" value="행추가" id="btnAction">
+</body>
+</html>

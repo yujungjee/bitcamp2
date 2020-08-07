@@ -8,15 +8,42 @@
 <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
 	<script>
 	$(documnet).ready(function(){
-		var jb=$('li').get(0);
-		$('p.ef').parent
+		var jb=$('li').get(0); // 선택요소 배열로 리턴
+		for(var i = 0; i<jb.length; i++){
+		$('div').append('<p>' + jb[i].innerHTML + '</p>');			
+		}
+	});
+	
+	
+	$(document).readt(function(){
+		var jb = $('li').get(0);
+			$('ul').after('<p>' + jb.innerHTML + '</p>');
+	});
+	
+	$(document).ready(function(){
+		$('p.ef').parent('div.cd').css('color','red');
+	});
+	
+	$(document).ready(function(){
+		$(".me").siblings().css({"border": "2px solid red"});
 	});
 	
 	</script>
 	
 	<ul>
+	<div class = "ab">
+		<p>Hello</p>
+	<div class = "cd">
+		<p class = "ef">
+		Lorem Ipsum Dolor
+		</p>
+	</div>
+	</div>
 		<li>Loream</li>
-		<li>lpsum</li>		
+		<li>lpsum</li>
+		<div></div>
+		
+		
 	</ul>
 	</body>
 </html>

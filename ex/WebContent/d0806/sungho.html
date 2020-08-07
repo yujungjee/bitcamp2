@@ -21,15 +21,43 @@
 </style>
 <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
 <script>
-	$("document").ready(function(){
-		$("ul.menu li.select").css("color", "red");
-		$("ul.menu li.select").css("color", "red");
-		$("ul.menu li.select").css("color", "red");
-		$("ul.menu li.select").css("color", "red");
-		$("ul.menu li.select").css("color", "red");
-		$("ul.menu li.select").css("color", "red");
-		
-	})
+$("document").ready(function() {
+	$("ul.menu li.select").css("color", "red");
+	$("ul.menu li:eq(0)").css("border", "2px solid #f00");
+	$("ul.menu li:eq(1)").css("border", "4px solid #f00");
+	$("ul.menu li:eq(2)").css("border", "6px solid #f00");
+	$("ul.menu li:eq(3)").css("border", "8px solid #f00");
+	$("#content .test1").css("color", "red");
+})
+
+function add() {
+	var ul = document.getElementsByClassName("menu")[1];
+	for(var i=1; i<=10; i++){
+		var li = document.createElement("li");
+		li.appendChild(document.createTextNode(i));
+		ul.appendChild(li);
+	}
+	
+}
+
+function sortkids(id) {
+	var ulnodes = document.getElementById(id).childNodes;
+	for(var i in ulnodes){
+		if(ulnodes[i].nodeType == 3){
+			ulnodes[i].remove();
+		}
+	}
+	for(var j=0; j<4; j++){
+	for(var i=0; i<3; i++){
+		if(ulnodes[i].nodeType == 1){
+			console.log(ulnodes[i]);
+			if(ulnodes[i].firstChild.nodeValue>ulnodes[i+1].firstChild.nodeValue){
+				ulnodes[i].parentNode.insertBefore(ulnodes[i+1], ulnodes[i]);
+			}
+		}
+	}	
+	}
+}
 </script>
 </head>
 <body>
@@ -59,10 +87,14 @@
     </div>      
 </div>  
 <div id="samplePage2">
-    <button id="add">추가</button>
+    <button id="add" onclick="add()">추가</button>
     <ul class="menu">
         
     </ul>    
 </div>
+<ul id='list'>
+<li>c</li><li>b</li><li>a</li><li>d</li>
+</ul>
+<button onclick="sortkids('list')">Sort list</button>
 </body>
 </html>

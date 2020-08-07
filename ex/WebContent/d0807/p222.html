@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+	<script>
+	$(document).ready(function(){
+		var cloneEle = $(".testTd").clone();
+		cloneEle.text("B1");
+		
+		$(".testTr").append(cloneEle);
+		
+		$(".testTr").hover(function(){
+			$(this).css("background", "#c9c9c9");
+		}, function(){
+			$(this).css("background", "#fff");
+		});
+	});
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

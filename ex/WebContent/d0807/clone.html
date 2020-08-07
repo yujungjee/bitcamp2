@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+
+    $(document).ready(function(){
+	  $("button").click(function(){
+	    $("body").append($("p:first").clone());
+	  });
+	  
+	  $("p").click(function(){
+	    $(this).animate({fontSize: "+=1px"});
+	  });
+	});	
+
+</script>
+
+</head>
+<body>
+  <p>Click this paragraph to increase text size.</p>
+  <button>click here</button>
+</body>
+
+</html>

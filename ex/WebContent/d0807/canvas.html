@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script>
+    $(document).ready(function () {
+        var canvas = document.getElementById('canvas');
+        var context = canvas.getContext('2d');
+        // 이벤트를 연결합니다.
+        $(canvas).on({
+            mousedown: function (event) {
+                // 위치를 얻어냅니다. canvas 위치정보
+                var position = $(this).offset();
+                // canvas기준으로 x, y좌표
+                var x = event.pageX - position.left;
+                var y = event.pageY - position.top;
+
+                context.beginPath(); // 경로생성
+                context.moveTo(x, y); // 시작좌표
+            },
+            mouseup: function (event) {
+                // 위치를 얻어냅니다.
+                var position = $(this).offset();
+                var x = event.pageX - position.left;
+                var y = event.pageY - position.top;
+
+                context.lineTo(x, y); // 끝좌표
+                context.stroke(); // 선을 그린다
+            }
+        });
+    });
+</script>
+
+</head>
+
+<body>
+<canvas id="canvas" width="700" height="400" 
+                                        style="border: 3px solid black">
+</canvas> 
+
+</body>
+</html>
