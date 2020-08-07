@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script>
+    $(document).ready(function () {
+        var $checkbox = $('#chk'); 
+        console.log($checkbox.attr('checked')); // checked 
+        console.log($checkbox.prop('checked')); // true
+    });
+    
+    function btnClick(){
+    	var $checkbox = $('#chk');
+    	console.log($checkbox.attr('checked')); // checked 
+        console.log($checkbox.prop('checked')); // true	
+    }
+    
+    function chgClick(){
+    	var $checkbox = $('#chk');
+    	if($checkbox.prop('checked')) $checkbox.prop('checked', false);
+    	else $checkbox.prop('checked', true);
+    }
+</script>
+</head>
+
+<body>
+  <input type="checkbox" id='chk' name='chk' checked='checked'> <!--   default로 체크된 상태로 시작 -->
+  <input type="button" id='btn' value="확인" onclick='btnClick()'>
+  <input type="button" id='btn' value="변경" onclick='chgClick()'>
+</body>
+</html>
